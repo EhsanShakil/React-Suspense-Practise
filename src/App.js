@@ -1,11 +1,12 @@
 import React, { Suspense, lazy } from "react";
 import "./App.css";
+import Loader from "./Loader";
 
 const Post = lazy(() => import("./Post"));
 
 function App() {
   return (
-    <Suspense fallback={<h1>Loading...</h1>}>
+    <Suspense fallback={<Loader />}>
       <Post />
     </Suspense>
   );
