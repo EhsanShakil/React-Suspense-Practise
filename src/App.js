@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import "./App.css";
-import { createResource } from "./Api";
+import { createResource } from "./api";
 
 const resourse = createResource();
 
