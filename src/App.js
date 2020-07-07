@@ -1,27 +1,14 @@
-import React, { Suspense } from "react";
+import React, { Suspense, lazy } from "react";
 import "./App.css";
-import { createResource } from "./api";
 
-const resourse = createResource();
+const Post = lazy(() => import("./Post"));
 
 function App() {
   return (
     <Suspense fallback={<h1>Loading...</h1>}>
-      <Posts />
+      <Post />
     </Suspense>
   );
 }
-
-const Posts = () => {
-  const posts = resourse.read();
-  console.log(posts.title);
-  return (
-    <div>
-      <ul>
-        <li>{posts.title}</li>
-      </ul>
-    </div>
-  );
-};
 
 export default App;
